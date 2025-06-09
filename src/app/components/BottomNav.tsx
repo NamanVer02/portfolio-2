@@ -54,7 +54,7 @@ export default function BottomNav() {
         >
           {/* Glassmorphic container */}
           <motion.div
-            className="absolute inline-flex bg-white/70 inset-0 backdrop-blur-sm rounded-full border border-gray-200/50"
+            className="absolute inline-flex bg-white/60 inset-0 backdrop-blur-sm rounded-full border border-gray-200/50"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.4 }}
