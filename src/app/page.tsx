@@ -1,31 +1,36 @@
 "use client";
 
-import { useEffect } from "react";
 import ShinyText from "./components/ShinyText";
+import LiquidChrome from "./components/LiquidChrome";
 
 export default function Home() {
-  const heroHeadings = [
-    "FRONTEND DEVELOPER",
-    "BACKEND DEVELOPER",
-    "MOBILE DEVELOPER",
-    "DEVOPS ENGINEER",
-    "UI/UX DESIGNER",
-  ];
-
   return (
     <div className="min-h-screen bg-black">
-      {/* Header Stats */}
-      <header className="fixed top-0 left-0 right-0 z-10 bg-black/80 backdrop-blur-sm">
-        <div className="px-4 pt-4">
-          <div className="flex items-center">
-            <img src="/logo-light.svg" alt="Logo" className="w-10 h-10" />
+      {/* Hero Section */}
+      <section className="relative flex items-center justify-center h-screen px-4 overflow-hidden">
+        {/* LiquidChrome Background */}
+        <div className="absolute inset-0 z-0">
+          <LiquidChrome
+            baseColor={[0.01, 0.01, 0.01]}
+            speed={0.2}
+            amplitude={0.3}
+            frequencyX={1}
+            frequencyY={1}
+            interactive={true}
+          />
+        </div>
+
+        {/* Header Logo */}
+        <div className="absolute top-5 left-5 z-10">
+          <div className="px-4 pt-4">
+            <div className="flex items-center">
+              <img src="/logo-light.svg" alt="Logo" className="w-10 h-10" />
+            </div>
           </div>
         </div>
-      </header>
 
-      {/* Hero Section */}
-      <section className="flex items-center justify-center h-screen px-4">
-        <div className="text-center">
+        {/* Hero Content */}
+        <div className="relative z-10 text-center">
           <ShinyText
             text="NAMAN VERMA"
             disabled={false}
