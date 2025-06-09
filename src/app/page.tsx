@@ -1,42 +1,40 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import ShinyText from "./components/ShinyText";
 
 export default function Home() {
-  const [date, setDate] = useState(new Date());
-
-  useEffect(() => {
-    const interval = setInterval(() => setDate(new Date()), 1000);
-    return () => clearInterval(interval);
-  }, []);
+  const heroHeadings = [
+    "FRONTEND DEVELOPER",
+    "BACKEND DEVELOPER",
+    "MOBILE DEVELOPER",
+    "DEVOPS ENGINEER",
+    "UI/UX DESIGNER",
+  ];
 
   return (
     <div className="min-h-screen bg-black">
       {/* Header Stats */}
-      <header className="bg-black/80 backdrop-blur-sm">
-        <div className="px-4 py-4">
+      <header className="fixed top-0 left-0 right-0 z-10 bg-black/80 backdrop-blur-sm">
+        <div className="px-4 pt-4">
           <div className="flex items-center">
-            <img 
-              src="/logo-light.svg" 
-              alt="Logo" 
-              className="w-10 h-10"
-            />
+            <img src="/logo-light.svg" alt="Logo" className="w-10 h-10" />
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="h-screen flex items-center justify-center bg-black">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-            Welcome to My Portfolio
-          </h1>
-          <p className="text-xl md:text-2xl text-neutral-300 mb-8">
-            Building amazing digital experiences
-          </p>
-          <button className="bg-white hover:bg-neutral-200 text-black font-semibold py-3 px-8 rounded-full transition duration-300">
-            Get Started
-          </button>
+      <section className="flex items-center justify-center h-screen px-4">
+        <div className="text-center">
+          <ShinyText
+            text="NAMAN VERMA"
+            disabled={false}
+            speed={3}
+            className="text-8xl font-bold mb-2"
+          />
+          <div className="text-lg font-semibold text-neutral-300">
+            FULL STACK DEVELOPER | DEVOPS ENGINEER | UI/UX DESIGNER
+          </div>
         </div>
       </section>
 
