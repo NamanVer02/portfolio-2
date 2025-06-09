@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black">
       {/* Header Stats */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm">
+      <header className="bg-black/80 backdrop-blur-sm">
         <div className="px-4 py-4">
           <div className="flex items-center">
             <img 
