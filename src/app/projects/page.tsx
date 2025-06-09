@@ -78,15 +78,15 @@ export default function Projects() {
   const otherProjects = projects.filter((project) => !project.featured);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black">
       {/* Hero Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-black">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-8 text-black">
+            <h1 className="text-4xl md:text-5xl font-bold mb-8 text-white">
               My Projects
             </h1>
-            <p className="text-xl text-gray-700 mb-12">
+            <p className="text-xl text-neutral-300 mb-12">
               Here are some of the projects I've worked on. Each one represents
               a unique challenge and learning experience.
             </p>
@@ -95,37 +95,37 @@ export default function Projects() {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-neutral-950">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-black">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-white">
               Featured Projects
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {featuredProjects.map((project) => (
                 <div
                   key={project.id}
-                  className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300"
+                  className="bg-neutral-900 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300"
                 >
                   <div className="p-8">
                     <div className="text-6xl mb-6 text-center">
                       {project.image}
                     </div>
-                    <h3 className="text-2xl font-bold mb-4 text-black">
+                    <h3 className="text-2xl font-bold mb-4 text-white">
                       {project.title}
                     </h3>
-                    <p className="text-gray-700 mb-6 leading-relaxed">
+                    <p className="text-neutral-300 mb-6 leading-relaxed">
                       {project.description}
                     </p>
                     <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-gray-600 mb-3">
+                      <h4 className="text-sm font-semibold text-neutral-500 mb-3">
                         TECHNOLOGIES USED
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {project.technologies.map((tech, index) => (
                           <span
                             key={index}
-                            className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
+                            className="px-3 py-1 bg-neutral-800 text-neutral-300 text-sm rounded-full"
                           >
                             {tech}
                           </span>
@@ -137,7 +137,7 @@ export default function Projects() {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 bg-black hover:bg-gray-800 text-white text-center py-3 px-6 rounded-lg transition duration-300"
+                        className="flex-1 bg-white hover:bg-neutral-200 text-black text-center py-3 px-6 rounded-lg transition duration-300"
                       >
                         Live Demo
                       </a>
@@ -145,7 +145,7 @@ export default function Projects() {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 border-2 border-black hover:bg-black hover:text-white text-black text-center py-3 px-6 rounded-lg transition duration-300"
+                        className="flex-1 border-2 border-white hover:bg-white hover:text-black text-white text-center py-3 px-6 rounded-lg transition duration-300"
                       >
                         View Code
                       </a>
@@ -159,25 +159,25 @@ export default function Projects() {
       </section>
 
       {/* Other Projects */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-black">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-black">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-white">
               Other Projects
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {otherProjects.map((project) => (
                 <div
                   key={project.id}
-                  className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition duration-300"
+                  className="bg-neutral-950 rounded-lg p-6 hover:bg-neutral-900 hover:shadow-lg transition duration-300"
                 >
                   <div className="text-4xl mb-4 text-center">
                     {project.image}
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-black">
+                  <h3 className="text-xl font-bold mb-3 text-white">
                     {project.title}
                   </h3>
-                  <p className="text-gray-700 mb-4 text-sm leading-relaxed">
+                  <p className="text-neutral-300 mb-4 text-sm leading-relaxed">
                     {project.description}
                   </p>
                   <div className="mb-4">
@@ -185,13 +185,13 @@ export default function Projects() {
                       {project.technologies.slice(0, 3).map((tech, index) => (
                         <span
                           key={index}
-                          className="px-2 py-1 bg-white text-gray-600 text-xs rounded"
+                          className="px-2 py-1 bg-neutral-900 text-neutral-400 text-xs rounded"
                         >
                           {tech}
                         </span>
                       ))}
                       {project.technologies.length > 3 && (
-                        <span className="px-2 py-1 bg-white text-gray-600 text-xs rounded">
+                        <span className="px-2 py-1 bg-neutral-900 text-neutral-400 text-xs rounded">
                           +{project.technologies.length - 3} more
                         </span>
                       )}
@@ -202,7 +202,7 @@ export default function Projects() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 bg-black hover:bg-gray-800 text-white text-center py-2 px-4 rounded text-sm transition duration-300"
+                      className="flex-1 bg-white hover:bg-neutral-200 text-black text-center py-2 px-3 rounded text-sm transition duration-300"
                     >
                       Demo
                     </a>
@@ -210,7 +210,7 @@ export default function Projects() {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 border border-black hover:bg-black hover:text-white text-black text-center py-2 px-4 rounded text-sm transition duration-300"
+                      className="flex-1 border border-white hover:bg-white hover:text-black text-white text-center py-2 px-3 rounded text-sm transition duration-300"
                     >
                       Code
                     </a>
@@ -223,10 +223,10 @@ export default function Projects() {
       </section>
 
       {/* Skills & Technologies */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-black">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-white">
               Technologies I Work With
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
@@ -246,10 +246,10 @@ export default function Projects() {
               ].map((tech, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center p-4 bg-white rounded-lg hover:shadow-md transition duration-300"
+                  className="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:shadow-md transition duration-300"
                 >
                   <div className="text-3xl mb-2">{tech.icon}</div>
-                  <span className="text-sm font-medium text-gray-700">
+                  <span className="text-sm font-medium text-gray-200">
                     {tech.name}
                   </span>
                 </div>
@@ -260,19 +260,19 @@ export default function Projects() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-neutral-950">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
-            Like What You See?
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">
+            Interested in My Work?
           </h2>
-          <p className="text-xl text-gray-700 mb-8">
-            Let's collaborate on your next project and bring your ideas to life.
+          <p className="text-xl text-neutral-300 mb-8">
+            I'm always open to discussing new projects and opportunities.
           </p>
           <a
             href="/contact"
-            className="inline-block bg-black hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-full transition duration-300"
+            className="inline-block bg-white hover:bg-neutral-200 text-black font-semibold py-3 px-8 rounded-full transition duration-300"
           >
-            Start a Project
+            Get In Touch
           </a>
         </div>
       </section>

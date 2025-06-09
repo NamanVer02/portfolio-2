@@ -1,25 +1,53 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 export default function Home() {
+  const [date, setDate] = useState(new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => setDate(new Date()), 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black">
+      {/* Header Stats */}
+      <header className="flex justify-between items-center px-6 py-4">
+        <div className="text-sm text-neutral-500">
+          Good{" "}
+          {date.getHours() < 12
+            ? "morning"
+            : date.getHours() < 18
+            ? "afternoon"
+            : "evening"}
+        </div>
+        <div className="text-right">
+          <div className="text-sm text-neutral-500">
+            Local Time • {date.toLocaleTimeString()} (GMT +5:30)
+          </div>
+        </div>
+      </header>
+
       {/* Hero Section */}
-      <section className="h-screen flex items-center justify-center bg-white">
+      <section className="h-screen flex items-center justify-center bg-black">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-black">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
             Welcome to My Portfolio
           </h1>
-          <p className="text-xl md:text-2xl text-gray-800 mb-8">
+          <p className="text-xl md:text-2xl text-neutral-300 mb-8">
             Building amazing digital experiences
           </p>
-          <button className="bg-black hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-full transition duration-300">
+          <button className="bg-white hover:bg-neutral-200 text-black font-semibold py-3 px-8 rounded-full transition duration-300">
             Get Started
           </button>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-neutral-950">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-black">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
             What I Do
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -43,13 +71,13 @@ export default function Home() {
             ].map((feature, index) => (
               <div
                 key={index}
-                className="p-6 rounded-lg bg-gray-50 hover:shadow-lg transition duration-300"
+                className="p-6 rounded-lg bg-neutral-900 hover:bg-neutral-800 hover:shadow-lg transition duration-300"
               >
                 <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold mb-2 text-black">
+                <h3 className="text-xl font-semibold mb-2 text-white">
                   {feature.title}
                 </h3>
-                <p className="text-gray-700">{feature.description}</p>
+                <p className="text-neutral-300">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -57,15 +85,15 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-neutral-900">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-black">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">
             Let's Work Together
           </h2>
-          <p className="text-xl text-gray-800 mb-8">
+          <p className="text-xl text-neutral-300 mb-8">
             Have a project in mind? I'd love to hear about it.
           </p>
-          <button className="bg-black hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-full transition duration-300">
+          <button className="bg-white hover:bg-neutral-200 text-black font-semibold py-3 px-8 rounded-full transition duration-300">
             Contact Me
           </button>
         </div>

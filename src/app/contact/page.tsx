@@ -29,15 +29,15 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black">
       {/* Hero Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-black">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-8 text-black">
+            <h1 className="text-4xl md:text-5xl font-bold mb-8 text-white">
               Get In Touch
             </h1>
-            <p className="text-xl text-gray-700 mb-12">
+            <p className="text-xl text-neutral-300 mb-12">
               Have a project in mind or just want to chat? I'd love to hear from
               you.
             </p>
@@ -46,20 +46,20 @@ export default function Contact() {
       </section>
 
       {/* Contact Form & Info Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-neutral-950">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Contact Form */}
-              <div className="bg-white p-8 rounded-lg shadow-lg">
-                <h2 className="text-2xl font-semibold mb-6 text-black">
+              <div className="bg-neutral-900 p-8 rounded-lg shadow-lg">
+                <h2 className="text-2xl font-semibold mb-6 text-white">
                   Send Me a Message
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-gray-700 mb-2"
+                      className="block text-sm font-medium text-neutral-400 mb-2"
                     >
                       Name
                     </label>
@@ -70,14 +70,14 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition duration-200"
+                      className="w-full px-4 py-3 border border-neutral-700 bg-neutral-800 text-white rounded-lg focus:ring-2 focus:ring-white focus:border-transparent outline-none transition duration-200"
                       placeholder="Your full name"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-gray-700 mb-2"
+                      className="block text-sm font-medium text-neutral-400 mb-2"
                     >
                       Email
                     </label>
@@ -88,14 +88,14 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition duration-200"
+                      className="w-full px-4 py-3 border border-neutral-700 bg-neutral-800 text-white rounded-lg focus:ring-2 focus:ring-white focus:border-transparent outline-none transition duration-200"
                       placeholder="your.email@example.com"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="subject"
-                      className="block text-sm font-medium text-gray-700 mb-2"
+                      className="block text-sm font-medium text-neutral-400 mb-2"
                     >
                       Subject
                     </label>
@@ -106,14 +106,14 @@ export default function Contact() {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition duration-200"
+                      className="w-full px-4 py-3 border border-neutral-700 bg-neutral-800 text-white rounded-lg focus:ring-2 focus:ring-white focus:border-transparent outline-none transition duration-200"
                       placeholder="What's this about?"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-sm font-medium text-gray-700 mb-2"
+                      className="block text-sm font-medium text-neutral-400 mb-2"
                     >
                       Message
                     </label>
@@ -124,13 +124,13 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       rows={6}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition duration-200 resize-vertical"
+                      className="w-full px-4 py-3 border border-neutral-700 bg-neutral-800 text-white rounded-lg focus:ring-2 focus:ring-white focus:border-transparent outline-none transition duration-200 resize-vertical"
                       placeholder="Tell me about your project or just say hi!"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-black hover:bg-gray-800 text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
+                    className="w-full bg-white hover:bg-neutral-200 text-black font-semibold py-3 px-6 rounded-lg transition duration-300"
                   >
                     Send Message
                   </button>
@@ -140,10 +140,10 @@ export default function Contact() {
               {/* Contact Information */}
               <div className="space-y-8">
                 <div>
-                  <h2 className="text-2xl font-semibold mb-6 text-black">
+                  <h2 className="text-2xl font-semibold mb-6 text-white">
                     Let's Connect
                   </h2>
-                  <p className="text-gray-700 mb-8">
+                  <p className="text-neutral-300 mb-8">
                     I'm always open to discussing new opportunities, interesting
                     projects, or just having a friendly chat about technology
                     and development.
@@ -175,15 +175,15 @@ export default function Contact() {
                     <div key={index} className="flex items-center space-x-4">
                       <div className="text-2xl">{contact.icon}</div>
                       <div>
-                        <h3 className="font-semibold text-black">
+                        <h3 className="font-semibold text-white">
                           {contact.title}
                         </h3>
                         {contact.link.startsWith("#") ? (
-                          <p className="text-gray-700">{contact.value}</p>
+                          <p className="text-neutral-300">{contact.value}</p>
                         ) : (
                           <a
                             href={contact.link}
-                            className="text-gray-700 hover:text-black transition duration-200"
+                            className="text-neutral-300 hover:text-white transition duration-200"
                           >
                             {contact.value}
                           </a>
@@ -195,7 +195,7 @@ export default function Contact() {
 
                 {/* Social Links */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-4 text-black">
+                  <h3 className="text-xl font-semibold mb-4 text-white">
                     Follow Me
                   </h3>
                   <div className="flex space-x-4">
@@ -226,7 +226,7 @@ export default function Contact() {
                         href={social.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center w-12 h-12 bg-gray-100 hover:bg-gray-200 rounded-lg transition duration-300"
+                        className="flex items-center justify-center w-12 h-12 bg-neutral-800 hover:bg-neutral-700 rounded-lg transition duration-300"
                         title={social.name}
                       >
                         <span className="text-xl">{social.icon}</span>
@@ -241,12 +241,12 @@ export default function Contact() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-black">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
             Ready to Start Your Project?
           </h2>
-          <p className="text-xl text-gray-700 mb-8">
+          <p className="text-xl text-neutral-300 mb-8">
             Let's work together to bring your ideas to life.
           </p>
           <a
@@ -257,7 +257,7 @@ export default function Contact() {
                 .querySelector("form")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="inline-block bg-black hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-full transition duration-300"
+            className="inline-block bg-white hover:bg-neutral-200 text-black font-semibold py-3 px-8 rounded-full transition duration-300"
           >
             Start a Conversation
           </a>
