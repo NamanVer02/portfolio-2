@@ -13,18 +13,14 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black">
       {/* Header Stats */}
-      <header className="flex justify-between items-center px-6 py-4">
-        <div className="text-sm text-neutral-500">
-          Good{" "}
-          {date.getHours() < 12
-            ? "morning"
-            : date.getHours() < 18
-            ? "afternoon"
-            : "evening"}
-        </div>
-        <div className="text-right">
-          <div className="text-sm text-neutral-500">
-            Local Time • {date.toLocaleTimeString()} (GMT +5:30)
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm">
+        <div className="px-4 py-4">
+          <div className="flex items-center">
+            <img 
+              src="/logo-light.svg" 
+              alt="Logo" 
+              className="w-10 h-10"
+            />
           </div>
         </div>
       </header>
