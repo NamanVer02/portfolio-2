@@ -138,7 +138,7 @@ export default function Home() {
 
         {/* Text Content - Positioned on the right with pointer-events */}
         <div className="relative z-20 h-full flex items-center justify-end p-8 pointer-events-none">
-          <div className="max-w-xl space-y-8 bg-neutral-950/80 backdrop-blur-sm p-8 rounded-2xl pointer-events-auto">
+          <div className="max-w-xl space-y-8 bg-black/80 backdrop-blur-sm p-8 rounded-2xl pointer-events-auto">
             <div className="space-y-6">
               <h2 className="text-lg text-white leading-relaxed">
                 As someone who's explored various tech domains, I find it
