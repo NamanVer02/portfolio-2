@@ -1,10 +1,10 @@
 export default function About() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="h-screen overflow-y-scroll snap-y snap-mandatory">
       {/* Hero Section */}
-      <section className="py-20 bg-black">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+      <section className="h-screen snap-start bg-black flex flex-col justify-center">
+        <div className="container mx-auto px-4 flex-1 flex items-center">
+          <div className="max-w-4xl mx-auto w-full">
             <h1 className="text-4xl md:text-5xl font-bold mb-8 text-white text-center">
               About Me
             </h1>
@@ -16,7 +16,7 @@ export default function About() {
               </div>
               <div className="flex-1">
                 <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-white">
-                  Hi, I'm [Your Name]
+                  Hi, I'm Naman Verma
                 </h2>
                 <p className="text-lg text-neutral-300 mb-6 leading-relaxed">
                   A passionate full-stack developer with a love for creating
@@ -36,9 +36,9 @@ export default function About() {
       </section>
 
       {/* Skills Section */}
-      <section className="py-20 bg-neutral-950">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+      <section className="h-screen snap-start bg-neutral-950 flex flex-col justify-center">
+        <div className="container mx-auto px-4 flex-1 flex items-center">
+          <div className="max-w-4xl mx-auto w-full">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
               Skills & Technologies
             </h2>
@@ -109,9 +109,9 @@ export default function About() {
       </section>
 
       {/* Experience/Timeline Section */}
-      <section className="py-20 bg-black">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+      <section className="h-screen snap-start bg-black flex flex-col justify-center">
+        <div className="container mx-auto px-4 flex-1 flex items-center">
+          <div className="max-w-4xl mx-auto w-full">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
               My Journey
             </h2>
