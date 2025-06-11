@@ -2,9 +2,11 @@
 
 import ShinyText from "./components/ShinyText";
 import LiquidChrome from "./components/LiquidChrome";
-import { ScrollReveal, RevealText } from "./components/ScrollReveal";
+import { ScrollReveal } from "./components/ScrollReveal";
 import Lanyard from "./components/Lanyard";
 import GlareHover from "./components/GlareHover";
+import SlideUp from "./components/SlideUp";
+import RevealText from "./components/RevealText";
 
 export default function Home() {
   return (
@@ -43,51 +45,6 @@ export default function Home() {
             />
             <div className="text-lg font-semibold text-neutral-300">
               FULL STACK DEVELOPER | DEVOPS ENGINEER | UI/UX DESIGNER
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="h-screen snap-start bg-black flex flex-col justify-center relative overflow-hidden">
-        {/* Lanyard - Full Section Coverage, positioned to left */}
-        <div
-          className="absolute inset-0 w-full h-full z-10"
-          style={{ left: "-25%" }}
-        >
-          <Lanyard position={[-4, 0, 20]} gravity={[0, -40, 0]} />
-        </div>
-
-        {/* Text Content - Positioned on the right with pointer-events */}
-        <div className="relative z-20 h-full flex items-center justify-end p-8 pointer-events-none">
-          <div className="max-w-xl space-y-8 bg-neutral-950/80 backdrop-blur-sm p-8 rounded-2xl pointer-events-auto">
-            <div className="space-y-6">
-              <h2 className="text-lg text-white leading-relaxed">
-                As someone who's explored various tech domains, I find it
-                difficult to fit into a single role. What remains consistent is
-                my curiosity and drive to learn emerging technologies.
-              </h2>
-              <h2 className="text-lg text-white leading-relaxed">
-                From conquering full-stack mountains (while still learning which
-                end is up) to diving into DSA dungeons, from cross-platform
-                mobile adventures to DevOps cloud-building experiments, from
-                UI/UX creative valleys to photography peak expeditions - I'm a
-                passionate fresher dabbling in everything with caffeinated
-                enthusiasm and a genuine love for learning, even if my "Hello
-                World" collection is more impressive than my actual expertise!
-              </h2>
-            </div>
-          </div>
-        </div>
-
-        {/* Social Links - Bottom Right */}
-        <div className="absolute bottom-8 right-16 z-20">
-          <div className="flex flex-col items-end pointer-events-auto">
-            <div className="text-sm text-neutral-300 cursor-pointer">
-              LinkedIn
-            </div>
-            <div className="text-sm text-neutral-300 cursor-pointer ">
-              Instagram
             </div>
           </div>
         </div>
@@ -208,20 +165,84 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="h-screen snap-start bg-neutral-900 flex flex-col justify-center">
-        <div className="container mx-auto px-4 text-center flex-1 flex items-center">
-          <div className="w-full">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">
-              Let's Work Together
-            </h2>
-            <p className="text-xl text-neutral-300 mb-8">
-              Have a project in mind? I'd love to hear about it.
-            </p>
-            <button className="bg-white hover:bg-neutral-200 text-black font-semibold py-3 px-8 rounded-full transition duration-300">
-              Contact Me
-            </button>
+      {/* About Section */}
+      <section className="h-screen snap-start bg-black flex flex-col justify-center relative overflow-hidden">
+        {/* Lanyard - Full Section Coverage, positioned to left */}
+        <div
+          className="absolute inset-0 w-full h-full z-20"
+          style={{ left: "-25%" }}
+        >
+          <Lanyard position={[-4, 0, 20]} gravity={[0, -40, 0]} />
+        </div>
+
+        {/* Text Content - Positioned on the right with pointer-events */}
+        <div className="relative z-10 h-full flex items-center justify-end p-8">
+          <div className="max-w-xl space-y-8 bg-black/80 backdrop-blur-sm p-8 rounded-2xl">
+            <div className="space-y-6">
+              <RevealText
+                delay={0.2}
+                duration={0.4}
+                staggerDelay={0.1}
+                className="text-lg text-white leading-relaxed"
+              >
+                {`As someone who's explored various tech domains, I find it
+                difficult to fit into a single role. What remains consistent is
+                my curiosity and drive to learn emerging technologies.`}
+              </RevealText>
+              <RevealText
+                delay={0.4}
+                duration={0.4}
+                staggerDelay={0.1}
+                className="text-lg text-white leading-relaxed"
+              >
+                {`From conquering full-stack mountains (while still learning which
+                end is up) to diving into DSA, from cross-platform mobile
+                adventures to DevOps cloud-building experiments, from UI/UX
+                creatives to photography expeditions - I'm a passionate fresher
+                dabbling in everything with caffeinated enthusiasm and a genuine
+                love for learning, even if my "Hello World" collection is more
+                impressive than my actual expertise!`}
+              </RevealText>
+            </div>
           </div>
+        </div>
+
+        {/* Social Links - Bottom Right */}
+        <div className="absolute bottom-8 right-16 z-60">
+          <div className="flex flex-col items-end">
+            <SlideUp delay={0.2} duration={0.5}>
+              <a
+                href="https://linkedin.com/in/NamanVer02"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-neutral-300 hover:text-white transition-colors mb-2"
+              >
+                LinkedIn
+              </a>
+            </SlideUp>
+            <SlideUp delay={0.1} duration={0.5}>
+              <a
+                href="https://instagram.com/namanver.02"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-neutral-300 hover:text-white transition-colors"
+              >
+                Instagram
+              </a>
+            </SlideUp>
+          </div>
+        </div>
+
+        {/* Email - Bottom Left */}
+        <div className="absolute bottom-8 left-16 z-60">
+          <SlideUp delay={0.2} duration={0.5}>
+            <a
+              href="mailto:namanver.2002@gmail.com"
+              className="text-sm text-neutral-300 hover:text-white transition-colors"
+            >
+              namanver.2002@gmail.com
+            </a>
+          </SlideUp>
         </div>
       </section>
     </div>

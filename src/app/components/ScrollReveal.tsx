@@ -21,7 +21,7 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
   className = "",
 }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "200px" });
 
   const directionOffset = {
     up: { y: distance, x: 0 },
