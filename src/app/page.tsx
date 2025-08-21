@@ -95,71 +95,146 @@ export default function Home() {
                       zIndex: hoveredProject === index ? 20 : 10,
                     }}
                   >
-                    <TiltedCard
-                      className="group cursor-pointer"
-                      tiltMaxAngleX={15}
-                      tiltMaxAngleY={15}
-                      scale={1.06}
-                      glareEnable={false}
-                    >
-                      <motion.div 
-                        className="overflow-hidden rounded-xl mb-3 relative"
-                        animate={{
-                          borderRadius: hoveredProject === index ? "16px" : "12px",
-                        }}
-                        transition={{
-                          duration: 0.3,
-                          ease: "easeOut",
-                        }}
+                    {(project.liveUrl || project.githubUrl) ? (
+                      <a
+                        href={project.liveUrl ?? project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block focus:outline-none"
                       >
-                        <motion.img
-                          src={project.image}
-                          alt={project.title}
-                          className="w-full h-84 object-cover"
-                          animate={{
-                            filter: hoveredProject === index 
-                              ? "grayscale(0%) brightness(1.1) saturate(1.2)" 
-                              : "grayscale(100%) brightness(1)",
-                          }}
-                          transition={{
-                            duration: 0.5,
-                            ease: [0.25, 0.46, 0.45, 0.94],
-                          }}
-                        />
-                      </motion.div>
-                      <div className="flex justify-between items-center">
-                        <motion.h3 
-                          className="text-lg text-white"
-                          animate={{
-                            color: hoveredProject === index ? "#93c5fd" : "#ffffff",
-                          }}
-                          transition={{
-                            duration: 0.3,
-                            ease: "easeOut",
-                          }}
+                        <TiltedCard
+                          className="group cursor-pointer"
+                          tiltMaxAngleX={15}
+                          tiltMaxAngleY={15}
+                          scale={1.06}
+                          glareEnable={false}
                         >
-                          {project.title}
-                        </motion.h3>
-                        <div className="flex gap-2">
-                          {project.technologies.map((tech, techIndex) => (
-                            <motion.span
-                              key={techIndex}
-                              className="text-xs"
+                          <motion.div 
+                            className="overflow-hidden rounded-xl mb-3 relative"
+                            animate={{
+                              borderRadius: hoveredProject === index ? "16px" : "12px",
+                            }}
+                            transition={{
+                              duration: 0.3,
+                              ease: "easeOut",
+                            }}
+                          >
+                            <motion.img
+                              src={project.image}
+                              alt={project.title}
+                              className="w-full h-84 object-cover"
                               animate={{
-                                color: hoveredProject === index ? "#d1d5db" : "#9ca3af",
+                                filter: hoveredProject === index 
+                                  ? "grayscale(0%) brightness(1.1) saturate(1.2)" 
+                                  : "grayscale(100%) brightness(1)",
+                              }}
+                              transition={{
+                                duration: 0.5,
+                                ease: [0.25, 0.46, 0.45, 0.94],
+                              }}
+                            />
+                          </motion.div>
+                          <div className="flex justify-between items-center">
+                            <motion.h3 
+                              className="text-lg text-white"
+                              animate={{
+                                color: hoveredProject === index ? "#93c5fd" : "#ffffff",
                               }}
                               transition={{
                                 duration: 0.3,
                                 ease: "easeOut",
                               }}
                             >
-                              {tech}
-                              {techIndex < project.technologies.length - 1 ? " " : ""}
-                            </motion.span>
-                          ))}
+                              {project.title}
+                            </motion.h3>
+                            <div className="flex gap-2">
+                              {project.technologies.map((tech, techIndex) => (
+                                <motion.span
+                                  key={techIndex}
+                                  className="text-xs"
+                                  animate={{
+                                    color: hoveredProject === index ? "#d1d5db" : "#9ca3af",
+                                  }}
+                                  transition={{
+                                    duration: 0.3,
+                                    ease: "easeOut",
+                                  }}
+                                >
+                                  {tech}
+                                  {techIndex < project.technologies.length - 1 ? " " : ""}
+                                </motion.span>
+                              ))}
+                            </div>
+                          </div>
+                        </TiltedCard>
+                      </a>
+                    ) : (
+                      <TiltedCard
+                        className="group cursor-pointer"
+                        tiltMaxAngleX={15}
+                        tiltMaxAngleY={15}
+                        scale={1.06}
+                        glareEnable={false}
+                      >
+                        <motion.div 
+                          className="overflow-hidden rounded-xl mb-3 relative"
+                          animate={{
+                            borderRadius: hoveredProject === index ? "16px" : "12px",
+                          }}
+                          transition={{
+                            duration: 0.3,
+                            ease: "easeOut",
+                          }}
+                        >
+                          <motion.img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-84 object-cover"
+                            animate={{
+                              filter: hoveredProject === index 
+                                ? "grayscale(0%) brightness(1.1) saturate(1.2)" 
+                                : "grayscale(100%) brightness(1)",
+                            }}
+                            transition={{
+                              duration: 0.5,
+                              ease: [0.25, 0.46, 0.45, 0.94],
+                            }}
+                          />
+                        </motion.div>
+                        <div className="flex justify-between items-center">
+                          <motion.h3 
+                            className="text-lg text-white"
+                            animate={{
+                              color: hoveredProject === index ? "#93c5fd" : "#ffffff",
+                            }}
+                            transition={{
+                              duration: 0.3,
+                              ease: "easeOut",
+                            }}
+                          >
+                            {project.title}
+                          </motion.h3>
+                          <div className="flex gap-2">
+                            {project.technologies.map((tech, techIndex) => (
+                              <motion.span
+                                key={techIndex}
+                                className="text-xs"
+                                animate={{
+                                  color: hoveredProject === index ? "#d1d5db" : "#9ca3af",
+                                }}
+                                transition={{
+                                  duration: 0.3,
+                                  ease: "easeOut",
+                                }}
+                              >
+                                {tech}
+                                {techIndex < project.technologies.length - 1 ? " " : ""}
+                              </motion.span>
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                    </TiltedCard>
+                      </TiltedCard>
+                    )}
                   </motion.div>
                 </ScrollReveal>
               ))}

@@ -36,5 +36,6 @@ export const projects: Project[] = [
     image: "/mm-1.png",
     technologies: ["React.js", "Supabase", "Vite.js"],
     description: "A music tool that allows you to move the music to a different streaming platforms.",
+    liveUrl: "https://music-mover-seven.vercel.app/",
   },
 ]; 
